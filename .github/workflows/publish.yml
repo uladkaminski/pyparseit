@@ -60,16 +60,11 @@ jobs:
           name: pyparsec-artifacts
           path: dist/*
 
-      - name: Generate release notes
-        id: release_notes
-        uses: conventional-changelog/standard-version@v9.5.0
-        with:
-          dry-run: false
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: dist/*
-          body: ${{ steps.release_notes.outputs.changelog }}
+          generate_release_notes: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
