@@ -1,4 +1,4 @@
-# pyparsec/parser.py
+# pyparseit/parser.py
 
 from typing import List, Optional
 

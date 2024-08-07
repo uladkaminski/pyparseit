@@ -1,4 +1,4 @@
-# pyparsec/utils.py
+# pyparseit/utils.py
 
 def read_markdown_file(file_path: str) -> str:
     """

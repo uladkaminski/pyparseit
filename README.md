@@ -1,7 +1,7 @@
 
-# PyParsec
+# PyParseit
 
-**PyParsec** is a Python library designed to parse Markdown files and strings to extract code snippets based on specific programming languages. It provides a simple and intuitive interface for developers who want to quickly extract and utilize code blocks from Markdown documents or strings.
+**PyParseit** is a Python library designed to parse Markdown files and strings to extract code snippets based on specific programming languages. It provides a simple and intuitive interface for developers who want to quickly extract and utilize code blocks from Markdown documents or strings.
 
 ## Table of Contents
 
@@ -19,7 +19,7 @@
 
 ## Introduction
 
-Markdown is widely used for documentation, blogging, and technical writing. PyParsec simplifies the task of extracting code snippets from Markdown files and strings, making it ideal for static site generators, content management systems, and more.
+Markdown is widely used for documentation, blogging, and technical writing. PyParseit simplifies the task of extracting code snippets from Markdown files and strings, making it ideal for static site generators, content management systems, and more.
 
 ## Features
 
@@ -30,17 +30,17 @@ Markdown is widely used for documentation, blogging, and technical writing. PyPa
 
 ## Installation
 
-You can install PyParsec via pip:
+You can install PyParseit via pip:
 
 ```bash
-pip install pyparsec
+pip install pyparseit
 ```
 
 Alternatively, you can clone the repository and install it manually:
 
 ```bash
-git clone https://github.com/uladkaminski/pyparsec.git
-cd pyparsec
+git clone https://github.com/uladkaminski/pyparseit.git
+cd pyparseit
 python setup.py install
 ```
 
@@ -48,10 +48,10 @@ python setup.py install
 
 ### Parsing from a File
 
-Here's a basic example of how to use PyParsec to extract Python code snippets from a Markdown file:
+Here's a basic example of how to use PyParseit to extract Python code snippets from a Markdown file:
 
 ```python
-from pyparsec import parse_markdown_file
+from pyparseit import parse_markdown_file
 
 # Specify the file path and language
 file_path = 'example_file.md'
@@ -63,15 +63,15 @@ python_snippets = parse_markdown_file(file_path, language=language)
 # Display extracted Python snippets from the file
 print("Extracted Python Snippets from File:")
 for snippet in python_snippets:
-    print(f"Language: {snippet.language}\nContent:\n{snippet.content}\n")
+  print(f"Language: {snippet.language}\nContent:\n{snippet.content}\n")
 ```
 
 ### Parsing from a String
 
-PyParsec can also parse Markdown content directly from a string:
+PyParseit can also parse Markdown content directly from a string:
 
 ```python
-from pyparsec import parse_markdown_string
+from pyparseit import parse_markdown_string
 
 # Define a Markdown string with multiple code blocks
 markdown_string = """
@@ -108,22 +108,22 @@ json_snippets = parse_markdown_string(markdown_string, language='json')
 # Display extracted JSON snippets from the string
 print("Extracted JSON Snippets from String:")
 for snippet in json_snippets:
-    print(f"Language: {snippet.language}\nContent:\n{snippet.content}\n")
+  print(f"Language: {snippet.language}\nContent:\n{snippet.content}\n")
 ```
 
 ## Command-Line Interface
 
-PyParsec also provides a CLI for easy usage from the terminal:
+PyParseit also provides a CLI for easy usage from the terminal:
 
 ```bash
-pyparsec path/to/your/file.md -l python -o output.txt
+pyparseit path/to/your/file.md -l python -o output.txt
 ```
 
 This command parses the specified Markdown file, extracts Python code snippets, and saves them to `output.txt`.
 
 ## Examples
 
-Check out the [examples](examples/) directory for more use cases and demonstrations of how to integrate PyParsec into your projects.
+Check out the [examples](examples/) directory for more use cases and demonstrations of how to integrate PyParseit into your projects.
 
 ## API Reference
 
@@ -156,7 +156,7 @@ Check out the [examples](examples/) directory for more use cases and demonstrati
 
 ## Contributing
 
-Contributions are welcome! If you'd like to contribute to PyParsec, please follow these steps:
+Contributions are welcome! If you'd like to contribute to PyParseit, please follow these steps:
 
 1. Fork the repository.
 2. Create a new branch for your feature or bugfix.

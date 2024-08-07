@@ -1,4 +1,4 @@
-# pyparsec/cli.py
+# pyparseit/cli.py
 
 import argparse
 import sys

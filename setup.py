@@ -1,13 +1,13 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='pyparsec',
-    version='0.1',
+    name='pyparseit',
+    version='0.1.1',
     packages=find_packages(),
     install_requires=[],
     entry_points={
         'console_scripts': [
-            'pyparsec=pyparsec.cli:main',
+            'pyparseit=pyparseit.cli:main',
         ],
     },
     author='uladkaminski',
@@ -20,5 +20,5 @@ setup(
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
     ],
-    url='https://github.com/uladkaminski/pyparsec',
+    url='https://github.com/uladkaminski/pyparseit',
 )

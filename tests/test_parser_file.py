@@ -3,7 +3,7 @@
 import os
 import unittest
 
-from pyparsec import parse_markdown_file, CodeSnippet
+from pyparseit import parse_markdown_file, CodeSnippet
 
 
 class TestParseMarkdownFile(unittest.TestCase):

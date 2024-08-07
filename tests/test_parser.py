@@ -2,7 +2,7 @@
 
 import unittest
 
-from pyparsec import parse_markdown_string, CodeSnippet
+from pyparseit import parse_markdown_string, CodeSnippet
 
 
 class TestParseMarkdownString(unittest.TestCase):

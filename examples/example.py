@@ -1,6 +1,6 @@
 # example.py
 
-from pyparsec import parse_markdown_file, parse_markdown_string
+from pyparseit import parse_markdown_file, parse_markdown_string
 
 file_path = 'example_file.md'
 language = 'python'
