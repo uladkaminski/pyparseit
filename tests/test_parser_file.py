@@ -4,6 +4,7 @@ import os
 import unittest
 
 from pyparseit import parse_markdown_file, CodeSnippet
+from pyparseit.parser import contains_snippet_file
 
 
 class TestParseMarkdownFile(unittest.TestCase):
@@ -50,3 +51,9 @@ class TestParseMarkdownFile(unittest.TestCase):
         snippets = parse_markdown_file(self.file_path)
         self.assertEqual(len(snippets), 2)
         self.assertTrue(all(isinstance(snippet, CodeSnippet) for snippet in snippets))
+
+    def test_contains_python_snippets(self):
+        self.assertTrue(contains_snippet_file(self.file_path, language='python'))
+
+    def test_contains_no_snippets(self):
+        self.assertFalse(contains_snippet_file(self.file_path, language='ruby'))

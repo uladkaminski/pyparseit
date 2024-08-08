@@ -1,4 +1,3 @@
-
 # PyParseit
 
 **PyParseit** is a Python library designed to parse Markdown files and strings to extract code snippets based on specific programming languages. It provides a simple and intuitive interface for developers who want to quickly extract and utilize code blocks from Markdown documents or strings.
@@ -11,6 +10,8 @@
 - [Usage](#usage)
   - [Parsing from a File](#parsing-from-a-file)
   - [Parsing from a String](#parsing-from-a-string)
+  - [Checking for Snippets in a File](#checking-for-snippets-in-a-file)
+  - [Checking for Snippets in a String](#checking-for-snippets-in-a-string)
 - [Command-Line Interface](#command-line-interface)
 - [Examples](#examples)
 - [API Reference](#api-reference)
@@ -25,6 +26,7 @@ Markdown is widely used for documentation, blogging, and technical writing. PyPa
 
 - Parse Markdown files or strings to extract code blocks.
 - Filter code snippets by programming language (e.g., Python, JavaScript, JSON).
+- Check for the existence of code snippets of a specific language in files or strings.
 - Command-line interface for easy integration into scripts and workflows.
 - Customizable and extensible API for developers.
 
@@ -52,16 +54,22 @@ Here's a basic example of how to use PyParseit to extract Python code snippets f
 
 ```python
 from pyparseit import parse_markdown_file
+```
 
-# Specify the file path and language
+Specify the file path and language
+
+```python
 file_path = 'example_file.md'
 language = 'python'
+```
 
-# Parse the Markdown file to extract Python code snippets
+Parse the Markdown file to extract Python code snippets
+```python
 python_snippets = parse_markdown_file(file_path, language=language)
+```
 
-# Display extracted Python snippets from the file
-print("Extracted Python Snippets from File:")
+Display extracted Python snippets from the file
+```python
 for snippet in python_snippets:
   print(f"Language: {snippet.language}\nContent:\n{snippet.content}\n")
 ```
@@ -111,6 +119,65 @@ for snippet in json_snippets:
   print(f"Language: {snippet.language}\nContent:\n{snippet.content}\n")
 ```
 
+### Checking for Snippets in a File
+
+You can also check if a Markdown file contains code snippets of a specific language:
+
+```python
+from pyparseit import contains_snippet_file
+
+# Specify the file path and language
+file_path = 'example_file.md'
+language = 'python'
+
+# Check if the Markdown file contains Python code snippets
+has_python_snippet = contains_snippet_file(file_path, language=language)
+
+print(f"File contains Python snippets: {has_python_snippet}")
+```
+
+### Checking for Snippets in a String
+
+Similarly, you can check if a Markdown string contains code snippets of a specific language:
+
+```python
+from pyparseit import contains_snippet_string
+
+# Define a Markdown string with multiple code blocks
+markdown_string = """
+# Sample Markdown
+
+Here is some Python code:
+
+\`\`\`python
+def hello_world():
+    print("Hello, world!")
+\`\`\`
+
+Here is some JavaScript code:
+
+\`\`\`javascript
+function helloWorld() {
+    console.log("Hello, world!");
+}
+\`\`\`
+
+And here is some JSON:
+
+\`\`\`json
+{
+    "name": "John",
+    "age": 30
+}
+\`\`\`
+"""
+
+# Check if the Markdown string contains Python code snippets
+has_python_snippet = contains_snippet_string(markdown_string, language='python')
+
+print(f"String contains Python snippets: {has_python_snippet}")
+```
+
 ## Command-Line Interface
 
 PyParseit also provides a CLI for easy usage from the terminal:
@@ -142,6 +209,22 @@ Check out the [examples](examples/) directory for more use cases and demonstrati
   - `markdown_string (str)`: The Markdown content as a string.
   - `language (Optional[str])`: The programming language to filter snippets by.
 - **Returns**: `List[CodeSnippet]`: A list of extracted code snippets.
+
+### `contains_snippet_file`
+
+- **Description**: Checks if a Markdown file contains at least one code snippet of a specific language.
+- **Parameters**:
+  - `file_path (str)`: The path to the Markdown file.
+  - `language (Optional[str])`: The programming language to filter snippets by.
+- **Returns**: `bool`: `True` if the file contains at least one snippet of the specified language, `False` otherwise.
+
+### `contains_snippet_string`
+
+- **Description**: Checks if a Markdown string contains at least one code snippet of a specific language.
+- **Parameters**:
+  - `markdown_string (str)`: The Markdown content as a string.
+  - `language (Optional[str])`: The programming language to filter snippets by.
+- **Returns**: `bool`: `True` if the string contains at least one snippet of the specified language, `False` otherwise.
 
 ### `CodeSnippet`
 

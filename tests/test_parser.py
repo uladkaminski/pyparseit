@@ -3,6 +3,7 @@
 import unittest
 
 from pyparseit import parse_markdown_string, CodeSnippet
+from pyparseit.parser import contains_snippet_string
 
 
 class TestParseMarkdownString(unittest.TestCase):
@@ -55,3 +56,9 @@ class TestParseMarkdownString(unittest.TestCase):
     def test_extract_no_snippets(self):
         snippets = parse_markdown_string(self.markdown_content, language='ruby')
         self.assertEqual(len(snippets), 0)
+
+    def test_contains_python_snippets(self):
+        self.assertTrue(contains_snippet_string(self.markdown_content, language='python'))
+
+    def test_contains_no_snippets(self):
+        self.assertFalse(contains_snippet_string(self.markdown_content, language='ruby'))
